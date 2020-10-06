@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Cardio 2</title>
+</head>
+<body>
+    
+    <script>
+        const person =[
+            {name:'Prashant', year:1997},
+            {name:'Susahnt', year:2000},
+            {name:'Pavan', year:1999},
+            {name:'Mehul', year:2020},
+        ];
+
+        const msgs = [
+            {txt:'Yopple!!', id:854696},
+            {txt:'Noni??', id:866576},
+            {txt:'Moshi Moshi !!', id:653489},
+            {txt:'What a drag??', id:965487},
+            {txt:'Sheesh!!', id:565845},
+        ];
+
+        //Some and Every Checks
+        //Array.prototype.some()
+
+        // const isAdult = person.some(function(per){
+        //     const currYear = (new Date()).getFullYear();
+        //     if(currYear - per.year>=19){
+        //         return true
+        //     }
+        // })
+
+        const isAdult = person.some(per => ((new Date()).getFullYear()) - per.year>=19);
+        console.log({isAdult});
+        //Array.prototype.every()
+        const allAdult = person.every(per => ((new Date()).getFullYear()) - per.year>=19);
+        console.log({allAdult});
+    
+       //Array.prototype.find()
+       //find is like filter,but instead returns just the one you are looking for
+      //find the msg with the id of 866576
+    //   const msg = msgs.find(function(msg){
+    //        if(msg.id===866576){
+    //            return true;
+    //        }
+    //     });
+        const msg = msgs.find(msg =>(msg.id=== 866576));
+        console.log(msg);
+
+      //Array.prototype.findIndex()
+      //find the msg with ID
+      //delete the msg with id of 965487
+      const index = msgs.findIndex(msg =>(msg.id=== 866576));
+        console.table(index);
+
+        msgs.splice(index,1);
+    </script>
+</body>
+</html>
